@@ -1,0 +1,444 @@
+:root {
+  --color-gold: #c5a572;
+  --color-dark-green: #2c3729;
+  --color-brown: #594936;
+  --color-light-gold: #e6d5b8;
+  --color-black: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Trajan Pro", "Times New Roman", serif;
+  background-color: var(--color-black);
+  color: var(--color-light-gold);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  max-width: 1000px;
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-black); /* Match your background color */
+}
+.hero {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Creates space between top and bottom content */
+  width: 90%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("images/title.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .hero {
+    min-height: 1500px; /* Desktop size */
+  }
+}
+
+.hero-content-top {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  padding-top: 2rem; /* Space from top */
+}
+
+.hero-content-bottom {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  padding-bottom: 2rem; /* Space from bottom */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("images/title.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-content-top p,  /* Production credit */
+.hero-content-top h2, /* The Weddening */
+.hero-content-bottom p {
+  /* Tagline and premiere date */
+  text-shadow: -1px -1px 0 #000, /* Top left */ 1px -1px 0 #000,
+    /* Top right */ -1px 1px 0 #000, /* Bottom left */ 1px 1px 0 #000; /* Bottom right */
+}
+
+/* Optional: make the outline stronger for better visibility */
+.production-credit,
+.tagline,
+.premiere-date {
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2; /* Ensure text stays on top */
+  position: relative;
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--color-gold);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-light-gold);
+  margin: 0.5em 0;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.premiere-date {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.starring {
+  margin-top: 4rem;
+}
+
+.actor {
+  margin-bottom: 4rem;
+}
+
+.actor-profile {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.actor-profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+}
+
+.actor-bio {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.movie-card {
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-brown);
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.05);
+  border-color: var(--color-gold);
+}
+
+.movie-card h5 {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: var(--color-light-gold);
+}
+
+h4 {
+  color: var(--color-gold);
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.production-credit {
+  font-family: "Copperplate", "Trajan Pro", serif;
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .production-credit {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+  /* ... existing media query code ... */
+}
+.starring h2 {
+  text-align: center;
+  margin-bottom: 3rem; /* Added more space below */
+  color: var(--color-gold); /* Matching the gold theme */
+  text-transform: uppercase; /* Optional: makes it match the movie style better */
+  letter-spacing: 0.2em; /* Optional: adds some elegant spacing */
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  /* Gradient effect */
+  background: linear-gradient(to bottom, #ffd700 0%, #c5a572 50%, #8b7355 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Add metallic effect with multiple text-shadows */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(197, 165, 114, 0.3),
+    0 0 20px rgba(197, 165, 114, 0.2);
+
+  /* Add subtle animation */
+  animation: titleGlow 3s ease-in-out infinite;
+
+  /* Optional: Add a subtle border */
+  -webkit-text-stroke: 1px rgba(197, 165, 114, 0.3);
+}
+/* Animation for the subtle glow effect */
+@keyframes titleGlow {
+  0%,
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(197, 165, 114, 0.3), 0 0 20px rgba(197, 165, 114, 0.2);
+  }
+  50% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(197, 165, 114, 0.4), 0 0 30px rgba(197, 165, 114, 0.3);
+  }
+}
+
+/* Ensure the effect works well on mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+    /* Simplify effects for better mobile performance */
+    animation: none;
+  }
+}
+
+.actor-profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  object-fit: cover; /* This ensures the image covers the area without stretching */
+  object-position: center top; /* This positions the image to favor the top part (better for headshots) */
+}
+
+/* Add these animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Add different delay for each movie card */
+.movie-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.movie-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add different delays for each card in the grid */
+.movie-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.movie-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.movie-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.movie-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.movie-card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.starring h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 3rem;
+  position: relative;
+
+  /* Gradient effect similar to main title */
+  background: linear-gradient(to bottom, #ffd700 0%, #c5a572 50%, #8b7355 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Glow effect */
+  text-shadow: 0 0 10px rgba(197, 165, 114, 0.3),
+    0 0 20px rgba(197, 165, 114, 0.2);
+
+  /* Optional: Add a subtle animation */
+  animation: starringGlow 3s ease-in-out infinite;
+}
+
+/* Animation for the glow effect */
+@keyframes starringGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(197, 165, 114, 0.3),
+      0 0 20px rgba(197, 165, 114, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(197, 165, 114, 0.4),
+      0 0 30px rgba(197, 165, 114, 0.3);
+  }
+}
+
+.info-section {
+  margin: 6rem 0; /* Space between sections */
+  text-align: center;
+}
+
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 3rem;
+  position: relative;
+
+  /* Gradient effect similar to main title */
+  background: linear-gradient(to bottom, #ffd700 0%, #c5a572 50%, #8b7355 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Glow effect */
+  text-shadow: 0 0 10px rgba(197, 165, 114, 0.3),
+    0 0 20px rgba(197, 165, 114, 0.2);
+
+  /* Optional: Add a subtle animation */
+  animation: starringGlow 3s ease-in-out infinite;
+}
+
+.info-text {
+  font-family: "Crimson Text", "Georgia", serif; /* Elegant serif font */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--color-light-gold);
+  margin-top: 2rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.info-text p {
+  margin-bottom: 1.5rem;
+}
+
+.info-highlight {
+  color: var(--color-gold);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.info-date {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-gold);
+  margin: 1.5rem 0;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-gold); /* Optional: adds a nice border */
+  border-radius: 8px; /* Optional: rounds the corners */
+}
+
+.movie-video {
+  width: 100%;
+  height: 300px; /* Match your other movie card images */
+  object-fit: none;
+  border-radius: 8px;
+  border: 2px solid var(--color-brown);
+  transition: transform 0.3s ease;
+}
+
+.movie-video:hover {
+  transform: scale(1.05);
+  border-color: var(--color-gold);
+}
