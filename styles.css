@@ -109,6 +109,7 @@ h2 {
   font-size: 2rem;
   color: var(--color-light-gold);
   margin: 0.5em 0;
+  text-align: center;
 }
 
 .tagline {
@@ -441,4 +442,63 @@ h1 {
 .movie-video:hover {
   transform: scale(1.05);
   border-color: var(--color-gold);
+}
+
+.maids-of-honor {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.maid-profile {
+  text-align: center;
+  flex: 0 1 250px; /* Allows shrinking but limits growth */
+}
+
+.maid-profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.maid-profile h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .maids-of-honor {
+    gap: 1rem;
+  }
+
+  .maid-profile {
+    flex: 0 1 150px;
+  }
+
+  .maid-profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .maid-profile h3 {
+    font-size: 1rem;
+  }
+}
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-light-gold);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-gold); /* Keep visited links the same color */
 }
