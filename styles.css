@@ -33,17 +33,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Creates space between top and bottom content */
-  width: 90%;
+  width: 100%;
   height: 100%;
   z-index: 1;
-  background-image: url("images/title.jpg");
+  background-image: url("images/the_weddening_mobile.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 105%;
 }
 @media (min-width: 768px) {
   .hero {
     min-height: 1500px; /* Desktop size */
+    background-image: url("images/the_weddening_desktop.jpeg");
   }
 }
 
